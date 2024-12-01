@@ -28,8 +28,6 @@ def part1(sorted_lines: list):
     print(f'1: {distance}')
 
 def part2(lines: list):
-    #lines = input.strip().split("\n")
-    #lines = list(l.split("   ") for l in lines)
     left, right = Counter(int(item[0]) for item in lines), Counter(int(item[1]) for item in lines)
     left, right = Counter(left), Counter(right)
     occurences = 0
