@@ -8,8 +8,7 @@ example = len(argv) > 2
 def get_input():
     url = f"https://adventofcode.com/2024/day/{day}/input"
     with open(f"{root}/token.txt", "r") as token:
-        day_input = get(url, headers={"Cookie": "session=" + token.read()}).text
-
+        day_input = get(url, headers={"Cookie": "session=" + token.read()}).text.strip()
         return day_input
 
 

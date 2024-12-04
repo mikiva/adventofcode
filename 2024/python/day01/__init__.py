@@ -14,7 +14,7 @@ def test():
     run(ex_input)
 
 def run(input: str):
-    lines = input.strip().split("\n")
+    lines = input.split("\n")
     lines = list(l.split("   ") for l in lines)
     left = sorted(list(int(item[0]) for item in lines))
     right = sorted(list(int(item[1]) for item in lines))
