@@ -28,12 +28,13 @@ def run(input):
     max_count = 100
     count = 0
     while_count = 0
-    while while_count < 100000000:
+    guard_inside = True
+    while guard_inside:
         (r,c), new_direction = make_move(grid, (r,c), direction)
         
         if (r < 0 or r >= len(grid)) or (c < 0 or c >= len(grid[0])):
             print("outside", count, len(visited))
-            break
+            guard_inside = False
         if new_direction == direction:
             count += 1
             visited.add((r,c))
