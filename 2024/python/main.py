@@ -1,5 +1,6 @@
 from sys import argv
 import git
+from datetime import datetime
 from requests import get
 
 day = argv[1]
@@ -11,7 +12,7 @@ def get_input():
         day_input = get(url, headers={"Cookie": "session=" + token.read()}).text.strip()
         return day_input
 
-
+start = datetime.now()
 if __name__ == "__main__":
     git_repo = git.Repo(".", search_parent_directories=True)
     root = git_repo.working_tree_dir
@@ -22,3 +23,8 @@ if __name__ == "__main__":
     else:
         day_input = get_input()
         package_day.run(day_input)
+
+    end = datetime.now()
+    td = f"{(end-start)}"
+    print("===========")
+    print(f"Run duration: {td}")
