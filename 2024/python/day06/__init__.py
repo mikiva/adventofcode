@@ -25,22 +25,17 @@ def run(input):
     #Start
     direction = "^"
     (r,c) = find_current_location(grid, direction)
-    max_count = 100
-    count = 0
-    while_count = 0
     guard_inside = True
     while guard_inside:
         (r,c), new_direction = make_move(grid, (r,c), direction)
         
         if (r < 0 or r >= len(grid)) or (c < 0 or c >= len(grid[0])):
-            print("outside", count, len(visited))
+            print("1: ", len(visited))
             guard_inside = False
         if new_direction == direction:
-            count += 1
             visited.add((r,c))
 
         direction = new_direction
-        while_count += 1
 
 
 def find_current_location(grid, to_find):
