@@ -1,9 +1,6 @@
 
 
 def run(input):
-    
-    
-
 
     zero_counts = 0
     pass_zero_counts = 0

@@ -12,12 +12,12 @@ def get_input():
         day_input = get(url, headers={"Cookie": "session=" + token.read()}).text.strip()
         return day_input
 
-start = datetime.now()
 if __name__ == "__main__":
     git_repo = git.Repo(".", search_parent_directories=True)
     root = git_repo.working_tree_dir
     package_name = f'day{day if len(day) > 1 else "0" + day}'
     package_day = __import__(package_name)
+    start = datetime.now()
     if example:
         package_day.test()
     else:
